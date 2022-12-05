@@ -1,7 +1,19 @@
-<h1> porco dio </h1>
+<h1> Welcome to Movie Heroes! </h1>
 
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= list.genre %></li>
-  <% end %>
-</ul>
+  <p> Check our movie lists </p>
+
+    <% @lists.each do |list| %>
+      <div>
+        <%= list.name %>
+        <%= list.genre %>
+      </div>
+    <% end %>
+
+<h2> Would you like to create a list yourself? </h2>
+
+<%= link_to "New list",
+  new_list_path(@list)%>
+
+  <h3> Check your lists </h3>
+    <%= link_to "Your lists",
+    dashboard_path(@pages)%>
