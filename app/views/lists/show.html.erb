@@ -1,13 +1,20 @@
-<p><strong>New list</strong></p>
-  <div class="list-group">
-    <%= @list.name %>
-    <%= @list.genre %>
-  </div>
-
-  <%= link_to "Edit",
-    edit_list_path(@list)%>
-
-  <%= link_to "Delete",
-    list_path(@list),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-  %>
+<p><strong><%= @list.name %> <%= @list.genre %></strong></p>
+  <% @list.movies.each do |movie| %>
+    <div class="list-group">
+      <div>
+        Title: <%= movie.title %>
+      </div>
+      <div>
+        Release year: <%= movie.year %>
+      </div>
+      <div>
+        Description: <%= movie.description %>
+      </div>
+      <div>
+        <%= movie.poster_url %>
+      </div>
+      <div>
+        Rating: <%= movie.rating %>
+      </div>
+    </div>
+  <% end %>

@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :set_list, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @lists = List.all
@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
     @list.save
-    redirect_to list_path(@list)
+    redirect_to dashboard_path
   end
 
   def edit
