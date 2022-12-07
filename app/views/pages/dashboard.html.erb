@@ -1,4 +1,4 @@
-<h1> This is my Dashboard</h1>
+<h1> Welcome to your Dashboard </h1>
 
 <ul id="lists">
 <% @user.lists.each do |list| %>
@@ -20,14 +20,14 @@
         Please edit or delete your list
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <%= link_to "See all movies", list_path(list)%> </button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <%= link_to "Add movie", new_list_bookmark_path(list)%> </button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <%= link_to "Edit", edit_list_path(list)%> </button>
-        <button type="button" class="btn btn-primary"> <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal"> <%= link_to "See all movies", list_path(list)%> </button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal"> <%= link_to "Add movie", new_list_bookmark_path(list)%> </button>
+        <button type="button" class="btn btn-warning" data-bs-dismiss="modal"> <%= link_to "Edit", edit_list_path(list)%> </button>
+        <button type="button" class="btn btn-warning"> <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button>
       </div>
     </div>
   </div>
-</div>
   </li>
+</div>
 <% end %>
 </ul>

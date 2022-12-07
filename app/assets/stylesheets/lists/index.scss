@@ -1,0 +1,73 @@
+.banner {
+  background-image: url(https://images.squarespace-cdn.com/content/v1/58ffa9f8893fc07baa0d353a/1654109510632-549M9Q3GTIVXG3HJYWD9/parsley_300522_29.jpg?format=1000w);
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  position: relative;
+}
+
+.banner h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  position: absolute;
+  top: 155px;
+}
+
+#new-list {
+  background-color: rgba(0, 0, 255, 0.253);
+  width: 8%;
+  margin-left: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+  position: absolute;
+  top: 190px;
+  border-radius: 20px;
+}
+
+.card-user-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 20px;
+}
+
+.list-button {
+  background-color: rgba(255, 166, 0, 0.568);
+  width: 11%;
+  margin: 8px 16px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.list-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.list-button a:hover {
+  color:black;
+
+}
+.card-user-list p {
+  font-size: 20px;
+  text-align: center;
+}
+.mamo {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+}

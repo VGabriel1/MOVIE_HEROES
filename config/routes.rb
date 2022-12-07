@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:destroy]
   get "dashboard", to: "pages#dashboard"
+  get "home", to: "pages#home"
 end
