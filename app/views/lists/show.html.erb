@@ -1,20 +1,16 @@
 <p><strong><%= @list.name %> <%= @list.genre %></strong></p>
-  <% @list.movies.each do |movie| %>
-    <div class="list-group">
-      <div>
-        Title: <%= movie.title %>
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-product">
+        <img src="https://image.shutterstock.com/image-vector/retro-dark-cinema-theater-hall-260nw-184141193.jpg">
+        <div class="card-product-infos">
+          <h2><%= bookmark.movie.title %></h2>
+          <p><strong><%= bookmark.movie.year %></strong></p>
+          <p> <%= bookmark.movie.description %></p>
+            <%# bookmark.movie.poster_url %>
+          <p><strong><%= bookmark.movie.rating %></strong></p>
+          <%= link_to "Delete this movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
       </div>
-      <div>
-        Release year: <%= movie.year %>
-      </div>
-      <div>
-        Description: <%= movie.description %>
-      </div>
-      <div>
-        <%= movie.poster_url %>
-      </div>
-      <div>
-        Rating: <%= movie.rating %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
