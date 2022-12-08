@@ -9,7 +9,9 @@
           <p> <%= bookmark.movie.description %></p>
             <%# bookmark.movie.poster_url %>
           <p><strong><%= bookmark.movie.rating %></strong></p>
+          <% if current_user == @list.user %>
           <%= link_to "Delete this movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <% end %>
         </div>
       </div>
     <% end %>

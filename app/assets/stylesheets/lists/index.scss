@@ -35,6 +35,14 @@
   padding: 20px;
 }
 
+
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .list-button {
   background-color: rgba(255, 166, 0, 0.568);
   width: 11%;
@@ -44,12 +52,7 @@
   padding: 10px 25px;
 }
 
-.middle {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
+
 .list-button a {
   text-decoration: none;
   color: white;
