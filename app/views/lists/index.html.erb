@@ -8,19 +8,20 @@
     </div>
   </div>
 
-  <div class="card-user-list">
-      <% @lists.each do |list| %>
-        <%= link_to list_path(list) do %>
-          <div class="mamo">
-            <img src="https://image.shutterstock.com/image-vector/retro-dark-cinema-theater-hall-260nw-184141193.jpg">
-            <p><%= list.name %> <%= list.genre %></p>
-          </div>
-        <% end %>
+  <div data-controller="search-movies">
+    <%= form_with url: lists_path, method: :get, html: {class:
+      "mb-4", data: {search_movies_target: "form"}} do |f| %>
+      <%= f.text_field :query, class: "form-control", placeholder:
+                      "Type a movie title", value: params[:query],
+                      data: {search_movies_target: "input",
+                      action: "keyup->search-movies#update"} %>
       <% end %>
-  </div>
 
-  <div class="middle">
-    <h3> Check your lists </h3>
-      <p class="list-button"> <%= link_to "your lists", dashboard_path(@pages) %></p>
-  </div>
+    <%= render "list", lists: @lists %>
+  <% if user_signed_in? %>
+    <div class="middle">
+      <h3> Check your lists </h3>
+        <p class="list-button"> <%= link_to "your lists", dashboard_path(@pages) %></p>
+    </div>
+  <% end %>
 </div>
