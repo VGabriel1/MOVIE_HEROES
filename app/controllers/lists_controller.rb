@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_list, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @lists = List.all
@@ -42,9 +41,5 @@ class ListsController < ApplicationController
 
   def set_list
     @list = List.find(params[:id])
-  end
-
-  def set_user
-    @list.user = current_user
   end
 end
