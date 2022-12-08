@@ -1,0 +1,11 @@
+<div class="card-user-list" data-search-movies-target="list">
+        <% lists.each do |list| %>
+          <%= link_to list_path(list) do %>
+            <div class="list-name">
+              <img src="https://image.shutterstock.com/image-vector/retro-dark-cinema-theater-hall-260nw-184141193.jpg">
+              <p><%= list.name %> <%= list.genre %></p>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>

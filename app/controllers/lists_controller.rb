@@ -4,6 +4,15 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+
+    if params[:query].present?
+      @lists = @lists.where("name ILIKE ?", "%#{params[:query]}%")
+    end
+
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: "lists/list", locals: {lists: @lists}, formats: [:html] }
+    end
   end
 
   def show
