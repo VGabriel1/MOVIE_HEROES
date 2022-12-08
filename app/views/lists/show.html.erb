@@ -1,14 +1,14 @@
-<p><strong><%= @list.name %> <%= @list.genre %></strong></p>
+<div class="heading"><p><strong><%= @list.name %> <%= @list.genre %></strong></p></div>
   <div class="cards">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="card-product">
-        <img src="https://image.shutterstock.com/image-vector/retro-dark-cinema-theater-hall-260nw-184141193.jpg">
+        <%= image_tag "https://image.tmdb.org/t/p/original#{bookmark.movie.poster_url}" %>
         <div class="card-product-infos">
           <h2><%= bookmark.movie.title %></h2>
           <p><strong><%= bookmark.movie.year %></strong></p>
-          <p> <%= bookmark.movie.description %></p>
-            <%# bookmark.movie.poster_url %>
-          <p><strong><%= bookmark.movie.rating %></strong></p>
+          <span class="description"> <%= bookmark.movie.description %></span>
+            <% bookmark.movie.poster_url %>
+          <p><strong><%= bookmark.movie.rating %><i class="fa-regular fa-star"></i></strong></p>
           <% if current_user == @list.user %>
           <%= link_to "Delete this movie", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
           <% end %>

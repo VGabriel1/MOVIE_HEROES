@@ -1,3 +1,12 @@
+.heading {
+  display:flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -6,6 +15,7 @@
   display: flex;
   align-items: center;
   margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .card-product img {
@@ -30,6 +40,14 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.description {
+  display: block;
+  width: 600px;
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 // Smallest device
